@@ -10,6 +10,10 @@
 		1E9C3068B4A1A09E6A78A375 /* Pods_PersistentQueueAndJobShedulerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1403A7118AC24838B9B37490 /* Pods_PersistentQueueAndJobShedulerExample.framework */; };
 		AA014DF122354E610054AC4E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DF022354E610054AC4E /* Item.swift */; };
 		AA014DF3223551EC0054AC4E /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DF2223551EC0054AC4E /* Api.swift */; };
+		AA014DF62235571D0054AC4E /* JobCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DF52235571D0054AC4E /* JobCreator.swift */; };
+		AA014DF8223557D60054AC4E /* AddItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DF7223557D60054AC4E /* AddItemJob.swift */; };
+		AA014DFA223561450054AC4E /* JobError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DF9223561450054AC4E /* JobError.swift */; };
+		AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFB223561BA0054AC4E /* BaseItemJob.swift */; };
 		AAF266F622354941009E0302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F522354941009E0302 /* AppDelegate.swift */; };
 		AAF266F822354941009E0302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F722354941009E0302 /* ViewController.swift */; };
 		AAF266FB22354941009E0302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF266F922354941009E0302 /* Main.storyboard */; };
@@ -23,6 +27,10 @@
 		8508A9C9B043425BD7D095CE /* Pods-PersistentQueueAndJobShedulerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersistentQueueAndJobShedulerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersistentQueueAndJobShedulerExample/Pods-PersistentQueueAndJobShedulerExample.debug.xcconfig"; sourceTree = "<group>"; };
 		AA014DF022354E610054AC4E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AA014DF2223551EC0054AC4E /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AA014DF52235571D0054AC4E /* JobCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCreator.swift; sourceTree = "<group>"; };
+		AA014DF7223557D60054AC4E /* AddItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemJob.swift; sourceTree = "<group>"; };
+		AA014DF9223561450054AC4E /* JobError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobError.swift; sourceTree = "<group>"; };
+		AA014DFB223561BA0054AC4E /* BaseItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseItemJob.swift; sourceTree = "<group>"; };
 		AAF266F222354941009E0302 /* PersistentQueueAndJobShedulerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentQueueAndJobShedulerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF266F522354941009E0302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF266F722354941009E0302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 		AA014DED22354DD40054AC4E /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				AA014DF4223555C20054AC4E /* JobSheduler */,
 				AA014DF2223551EC0054AC4E /* Api.swift */,
 			);
 			path = Adapters;
@@ -74,6 +83,17 @@
 			children = (
 			);
 			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		AA014DF4223555C20054AC4E /* JobSheduler */ = {
+			isa = PBXGroup;
+			children = (
+				AA014DF52235571D0054AC4E /* JobCreator.swift */,
+				AA014DF7223557D60054AC4E /* AddItemJob.swift */,
+				AA014DF9223561450054AC4E /* JobError.swift */,
+				AA014DFB223561BA0054AC4E /* BaseItemJob.swift */,
+			);
+			path = JobSheduler;
 			sourceTree = "<group>";
 		};
 		AAF266E922354941009E0302 = {
@@ -240,7 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA014DFA223561450054AC4E /* JobError.swift in Sources */,
+				AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */,
+				AA014DF62235571D0054AC4E /* JobCreator.swift in Sources */,
 				AAF266F822354941009E0302 /* ViewController.swift in Sources */,
+				AA014DF8223557D60054AC4E /* AddItemJob.swift in Sources */,
 				AA014DF122354E610054AC4E /* Item.swift in Sources */,
 				AA014DF3223551EC0054AC4E /* Api.swift in Sources */,
 				AAF266F622354941009E0302 /* AppDelegate.swift in Sources */,
