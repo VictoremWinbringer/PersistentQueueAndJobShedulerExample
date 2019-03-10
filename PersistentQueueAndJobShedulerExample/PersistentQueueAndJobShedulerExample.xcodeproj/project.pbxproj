@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E9C3068B4A1A09E6A78A375 /* Pods_PersistentQueueAndJobShedulerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1403A7118AC24838B9B37490 /* Pods_PersistentQueueAndJobShedulerExample.framework */; };
+		AA014DF122354E610054AC4E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DF022354E610054AC4E /* Item.swift */; };
 		AAF266F622354941009E0302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F522354941009E0302 /* AppDelegate.swift */; };
 		AAF266F822354941009E0302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F722354941009E0302 /* ViewController.swift */; };
 		AAF266FB22354941009E0302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF266F922354941009E0302 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		1403A7118AC24838B9B37490 /* Pods_PersistentQueueAndJobShedulerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PersistentQueueAndJobShedulerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2633CDBD81DBFD916BC15D25 /* Pods-PersistentQueueAndJobShedulerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersistentQueueAndJobShedulerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersistentQueueAndJobShedulerExample/Pods-PersistentQueueAndJobShedulerExample.release.xcconfig"; sourceTree = "<group>"; };
 		8508A9C9B043425BD7D095CE /* Pods-PersistentQueueAndJobShedulerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersistentQueueAndJobShedulerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersistentQueueAndJobShedulerExample/Pods-PersistentQueueAndJobShedulerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		AA014DF022354E610054AC4E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AAF266F222354941009E0302 /* PersistentQueueAndJobShedulerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentQueueAndJobShedulerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF266F522354941009E0302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF266F722354941009E0302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +51,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AA014DED22354DD40054AC4E /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		AA014DEE22354DEF0054AC4E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AA014DF022354E610054AC4E /* Item.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		AA014DEF22354E000054AC4E /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
 		AAF266E922354941009E0302 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +94,9 @@
 		AAF266F422354941009E0302 /* PersistentQueueAndJobShedulerExample */ = {
 			isa = PBXGroup;
 			children = (
+				AA014DEF22354E000054AC4E /* BusinessLogic */,
+				AA014DEE22354DEF0054AC4E /* Entities */,
+				AA014DED22354DD40054AC4E /* Adapters */,
 				AAF266F522354941009E0302 /* AppDelegate.swift */,
 				AAF266F722354941009E0302 /* ViewController.swift */,
 				AAF266F922354941009E0302 /* Main.storyboard */,
@@ -211,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF266F822354941009E0302 /* ViewController.swift in Sources */,
+				AA014DF122354E610054AC4E /* Item.swift in Sources */,
 				AAF266F622354941009E0302 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
