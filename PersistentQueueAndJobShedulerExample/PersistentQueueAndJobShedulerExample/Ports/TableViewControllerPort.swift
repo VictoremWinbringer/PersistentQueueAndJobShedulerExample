@@ -8,6 +8,8 @@
 
 import Foundation
 
-class ViewControllerPort {
-    
+class TableViewControllerPort {
+    var items:[Item]{
+      return  ItemsService.get()
+    }
 }

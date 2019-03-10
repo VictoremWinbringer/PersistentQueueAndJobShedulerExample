@@ -9,36 +9,34 @@
 import UIKit
 
 class ItemsTableViewController: UITableViewController {
-    var items:[String] = Array.init(repeating: "Test!", count: 10)
+    var items:[Item] = []
+    var port:TableViewControllerPort!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        //    self.navigationItem.leftBarButtonItem = self.in
+    self.port = TableViewControllerPort()
+        loadItems()
     }
     
-    // MARK: - Table view data source
+    private func loadItems(){
+        self.items = self.port.items
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return items.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = items[indexPath.row]
-        
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.name
+        cell.tag = item.id
         return cell
     }
     
