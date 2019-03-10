@@ -13,9 +13,8 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-       ItemsService.add(name: "Test1")
-       ItemsService.add(name: "Test2")
-       ItemsService.add(name: "Test3")
+        ItemsService.syncWithServer()
+        ItemsService.add(name: "Item")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,17 +34,14 @@ class ItemsTableViewController: UITableViewController {
         return cell
     }
     
-    
-    
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction.init(style: .normal, title: "Delete", handler: { a, i in
-          ItemsService.delete(item: ItemsService.get()[i.row])
-        self.tableView.deleteRows(at: [i], with: .fade)
+            ItemsService.delete(item: ItemsService.get()[i.row])
+            self.tableView.deleteRows(at: [i], with: .fade)
         })
         delete.backgroundColor = UIColor.red
         
@@ -81,13 +77,13 @@ class ItemsTableViewController: UITableViewController {
         })
         let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {[unowned alert] a in
             if let name = alert.textFields?[0].text {
-               ItemsService.add(name: name)
+                ItemsService.add(name: name)
                 self.tableView.insertRows(at: [IndexPath(row: ItemsService.get().count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
             }
         })
         let cansel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(ok)
         alert.addAction(cansel)
+        alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
 }

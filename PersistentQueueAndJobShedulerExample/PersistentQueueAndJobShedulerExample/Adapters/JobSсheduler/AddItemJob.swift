@@ -12,7 +12,6 @@ import SwiftQueue
 class AddItemJob: BaseItemsJob {
      static let type = "\(#file)"
     override func onRun(callback: JobResult) {
-        print(AddItemJob.type)
         if let item = self.createItem() {
             Api.Items.add(item: item)
             callback.done(.success)

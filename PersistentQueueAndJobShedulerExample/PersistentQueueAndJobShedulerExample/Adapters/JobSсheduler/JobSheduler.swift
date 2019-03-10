@@ -24,6 +24,7 @@ class JobSсheduler {
                     "id": item.id.description,
                     "name": item.name
                                ])
+                .persist(required: true)
                 .schedule(manager: manager)
         }
         
