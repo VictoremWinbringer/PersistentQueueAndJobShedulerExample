@@ -18,6 +18,7 @@
 		AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFF223579C50054AC4E /* DeleteItemJob.swift */; };
 		AA014E0222357C2E0054AC4E /* SyncItemsJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */; };
 		AA014E0422357EF20054AC4E /* JobSheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0322357EF20054AC4E /* JobSheduler.swift */; };
+		AA014E06223583EC0054AC4E /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E05223583EC0054AC4E /* ItemsService.swift */; };
 		AAF266F622354941009E0302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F522354941009E0302 /* AppDelegate.swift */; };
 		AAF266F822354941009E0302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F722354941009E0302 /* ViewController.swift */; };
 		AAF266FB22354941009E0302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF266F922354941009E0302 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		AA014DFF223579C50054AC4E /* DeleteItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemJob.swift; sourceTree = "<group>"; };
 		AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncItemsJob.swift; sourceTree = "<group>"; };
 		AA014E0322357EF20054AC4E /* JobSheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSheduler.swift; sourceTree = "<group>"; };
+		AA014E05223583EC0054AC4E /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		AAF266F222354941009E0302 /* PersistentQueueAndJobShedulerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentQueueAndJobShedulerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF266F522354941009E0302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF266F722354941009E0302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		AA014DEF22354E000054AC4E /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				AA014E05223583EC0054AC4E /* ItemsService.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				AA014DFA223561450054AC4E /* JobError.swift in Sources */,
 				AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */,
 				AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */,
+				AA014E06223583EC0054AC4E /* ItemsService.swift in Sources */,
 				AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */,
 				AA014DF62235571D0054AC4E /* ApiJobCreator.swift in Sources */,
 				AAF266F822354941009E0302 /* ViewController.swift in Sources */,
