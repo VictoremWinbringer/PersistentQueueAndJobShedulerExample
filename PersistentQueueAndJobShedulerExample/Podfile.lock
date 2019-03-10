@@ -1,0 +1,20 @@
+PODS:
+  - ReachabilitySwift (4.3.0)
+  - SwiftQueue (2.3.0):
+    - ReachabilitySwift (~> 4.2)
+
+DEPENDENCIES:
+  - SwiftQueue
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ReachabilitySwift
+    - SwiftQueue
+
+SPEC CHECKSUMS:
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  SwiftQueue: 2a2b6efbd40b72e54f93aabf802da38850bccc8d
+
+PODFILE CHECKSUM: 78664820cb82d36b95e3f481037346ed1919f5d3
+
+COCOAPODS: 1.5.3
