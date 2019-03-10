@@ -15,10 +15,15 @@ class BaseItemsJob: Job {
     }
     
     func onRemove(result: JobCompletion) {
-        //do nothing
+        switch result {
+        case .success:
+            print("SUCCESS ON JOB: with params \(String(describing: self.params))")
+        case .fail(let error):
+            print("ERROR ON JOB: \(error) with params \(String(describing: self.params)) ")
+        }
     }
     
-    let params: [String: Any]?
+    private let params: [String: Any]?
     
     required init(params: [String: Any]?) {
         self.params = params

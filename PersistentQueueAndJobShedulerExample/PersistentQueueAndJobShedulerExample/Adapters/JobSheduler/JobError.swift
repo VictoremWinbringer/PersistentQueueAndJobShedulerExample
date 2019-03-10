@@ -11,4 +11,5 @@ import Foundation
 
 enum JobError: Error {
     case  onAdd(String)
+    case onUpdate(String)
 }

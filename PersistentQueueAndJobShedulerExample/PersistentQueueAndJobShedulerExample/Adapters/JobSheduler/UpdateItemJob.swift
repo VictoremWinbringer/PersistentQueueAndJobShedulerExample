@@ -1,5 +1,5 @@
 //
-//  AddItemJob.swift
+//  UpdateItemJob.swift
 //  PersistentQueueAndJobShedulerExample
 //
 //  Created by Victor Winbringer on 10/03/2019.
@@ -9,16 +9,15 @@
 import Foundation
 import SwiftQueue
 
-class AddItemJob: BaseItemsJob {
-    
-    static let type = "AddItemJob"
-    
+class UpdateItemJob: BaseItemsJob {
+    static let type = "UpdateItemJob"
     override func onRun(callback: JobResult) {
-        if let item = self.createItem() {
-            Api.Items.add(item: item)
+        if let item = self.createItem(),
+            item.id > 0 {
+            Api.Items.update(item: item)
             callback.done(.success)
         } else {
-            callback.done(.fail(JobError.onAdd("Can't add item")))
+            callback.done(.fail(JobError.onUpdate("Can't update item")))
         }
     }
 }
