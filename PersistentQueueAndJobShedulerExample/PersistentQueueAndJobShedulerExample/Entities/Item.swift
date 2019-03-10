@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Item {
+final class Item {
     var id:Int
     var name:String
     
