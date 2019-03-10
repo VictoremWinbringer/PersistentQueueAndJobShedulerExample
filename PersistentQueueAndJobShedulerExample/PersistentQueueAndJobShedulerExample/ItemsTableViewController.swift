@@ -9,15 +9,13 @@
 import UIKit
 
 class ItemsTableViewController: UITableViewController {
-    var port:TableViewControllerPort!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.port = TableViewControllerPort()
-        self.port.add(name: "Test1")
-        self.port.add(name: "Test2")
-        self.port.add(name: "Test3")
+       ItemsService.add(name: "Test1")
+       ItemsService.add(name: "Test2")
+       ItemsService.add(name: "Test3")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,13 +23,13 @@ class ItemsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.port.items.count
+        return ItemsService.get().count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let item = self.port.items[indexPath.row]
+        let item = ItemsService.get()[indexPath.row]
         cell.textLabel?.text = item.name
         cell.tag = item.id
         return cell
@@ -46,13 +44,33 @@ class ItemsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction.init(style: .normal, title: "Delete", handler: { a, i in
-            
+          ItemsService.delete(item: ItemsService.get()[i.row])
+        self.tableView.deleteRows(at: [i], with: .fade)
         })
         delete.backgroundColor = UIColor.red
+        
         let update = UITableViewRowAction.init(style: .normal, title: "Update", handler: { a, i in
+            let item = ItemsService.get()[i.row]
+            let alert = UIAlertController(title: "Update", message: "Inter item name", preferredStyle: UIAlertController.Style.alert)
+            alert.addTextField(configurationHandler: { t in
+                t.placeholder = "name"
+                t.text = item.name
+            })
             
+            let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {[unowned alert] a in
+                if let name = alert.textFields?[0].text {
+                    item.name = name
+                    ItemsService.update(item: item)
+                    self.tableView.reloadRows(at: [i], with: UITableView.RowAnimation.automatic)
+                }
+            })
+            let cansel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(ok)
+            alert.addAction(cansel)
+            self.present(alert, animated: true, completion: nil)
         })
         update.backgroundColor = UIColor.blue
+        
         return [update,delete]
     }
     
@@ -61,14 +79,15 @@ class ItemsTableViewController: UITableViewController {
         alert.addTextField(configurationHandler: { t in
             t.placeholder = "name"
         })
-        
-        let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {a in
+        let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {[unowned alert] a in
             if let name = alert.textFields?[0].text {
-                self.port.add(name: name)
-                self.tableView.insertRows(at: [IndexPath(row: self.port.items.count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
+               ItemsService.add(name: name)
+                self.tableView.insertRows(at: [IndexPath(row: ItemsService.get().count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
             }
         })
+        let cansel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(ok)
+        alert.addAction(cansel)
         self.present(alert, animated: true, completion: nil)
     }
 }

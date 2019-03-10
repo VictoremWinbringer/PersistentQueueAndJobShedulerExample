@@ -18,7 +18,6 @@
 		AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFF223579C50054AC4E /* DeleteItemJob.swift */; };
 		AA014E0422357EF20054AC4E /* JobSheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0322357EF20054AC4E /* JobSheduler.swift */; };
 		AA014E06223583EC0054AC4E /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E05223583EC0054AC4E /* ItemsService.swift */; };
-		AA014E09223587640054AC4E /* TableViewControllerPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E08223587640054AC4E /* TableViewControllerPort.swift */; };
 		AA014E0B223588C70054AC4E /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0A223588C70054AC4E /* ItemsTableViewController.swift */; };
 		AAF266F622354941009E0302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F522354941009E0302 /* AppDelegate.swift */; };
 		AAF266FB22354941009E0302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF266F922354941009E0302 /* Main.storyboard */; };
@@ -40,7 +39,6 @@
 		AA014DFF223579C50054AC4E /* DeleteItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemJob.swift; sourceTree = "<group>"; };
 		AA014E0322357EF20054AC4E /* JobSheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSheduler.swift; sourceTree = "<group>"; };
 		AA014E05223583EC0054AC4E /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
-		AA014E08223587640054AC4E /* TableViewControllerPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPort.swift; sourceTree = "<group>"; };
 		AA014E0A223588C70054AC4E /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		AAF266F222354941009E0302 /* PersistentQueueAndJobShedulerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentQueueAndJobShedulerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF266F522354941009E0302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,14 +108,6 @@
 			path = "JobSсheduler";
 			sourceTree = "<group>";
 		};
-		AA014E07223587420054AC4E /* Ports */ = {
-			isa = PBXGroup;
-			children = (
-				AA014E08223587640054AC4E /* TableViewControllerPort.swift */,
-			);
-			path = Ports;
-			sourceTree = "<group>";
-		};
 		AAF266E922354941009E0302 = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +129,6 @@
 		AAF266F422354941009E0302 /* PersistentQueueAndJobShedulerExample */ = {
 			isa = PBXGroup;
 			children = (
-				AA014E07223587420054AC4E /* Ports */,
 				AA014DEF22354E000054AC4E /* BusinessLogic */,
 				AA014DEE22354DEF0054AC4E /* Entities */,
 				AA014DED22354DD40054AC4E /* Adapters */,
@@ -287,7 +276,6 @@
 				AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */,
 				AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */,
 				AA014E06223583EC0054AC4E /* ItemsService.swift in Sources */,
-				AA014E09223587640054AC4E /* TableViewControllerPort.swift in Sources */,
 				AA014E0B223588C70054AC4E /* ItemsTableViewController.swift in Sources */,
 				AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */,
 				AA014DF62235571D0054AC4E /* ApiJobCreator.swift in Sources */,
