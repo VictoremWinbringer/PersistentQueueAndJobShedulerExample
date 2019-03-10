@@ -15,6 +15,7 @@
 		AA014DFA223561450054AC4E /* JobError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DF9223561450054AC4E /* JobError.swift */; };
 		AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFB223561BA0054AC4E /* BaseItemJob.swift */; };
 		AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */; };
+		AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFF223579C50054AC4E /* DeleteItemJob.swift */; };
 		AAF266F622354941009E0302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F522354941009E0302 /* AppDelegate.swift */; };
 		AAF266F822354941009E0302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F722354941009E0302 /* ViewController.swift */; };
 		AAF266FB22354941009E0302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF266F922354941009E0302 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		AA014DF9223561450054AC4E /* JobError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobError.swift; sourceTree = "<group>"; };
 		AA014DFB223561BA0054AC4E /* BaseItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseItemJob.swift; sourceTree = "<group>"; };
 		AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemJob.swift; sourceTree = "<group>"; };
+		AA014DFF223579C50054AC4E /* DeleteItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemJob.swift; sourceTree = "<group>"; };
 		AAF266F222354941009E0302 /* PersistentQueueAndJobShedulerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentQueueAndJobShedulerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF266F522354941009E0302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF266F722354941009E0302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				AA014DF9223561450054AC4E /* JobError.swift */,
 				AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */,
 				AA014DFB223561BA0054AC4E /* BaseItemJob.swift */,
+				AA014DFF223579C50054AC4E /* DeleteItemJob.swift */,
 			);
 			path = JobSheduler;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA014DFA223561450054AC4E /* JobError.swift in Sources */,
+				AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */,
 				AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */,
 				AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */,
 				AA014DF62235571D0054AC4E /* JobCreator.swift in Sources */,
