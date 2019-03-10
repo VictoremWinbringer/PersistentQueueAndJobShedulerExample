@@ -10,6 +10,7 @@ import Foundation
 import SwiftQueue
 
 class SyncItemsJob: BaseItemsJob {
+    
     override func onRun(callback: JobResult) {
         //Do nothing. We don't have server
         Api.Items.synchronize()

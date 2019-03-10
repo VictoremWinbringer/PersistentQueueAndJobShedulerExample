@@ -1,5 +1,5 @@
 //
-//  DeleteItemJob.swift
+//  AddItemJob.swift
 //  PersistentQueueAndJobShedulerExample
 //
 //  Created by Victor Winbringer on 10/03/2019.
@@ -9,14 +9,14 @@
 import Foundation
 import SwiftQueue
 
-class DeleteItemJob: BaseItemsJob {
+class AddItemJob: BaseItemsJob {
+    
     override func onRun(callback: JobResult) {
-        if let item = self.createItem(),
-            item.id > 0 {
-            Api.Items.delete(id: item.id)
+        if let item = self.createItem() {
+            Api.Items.add(item: item)
             callback.done(.success)
         } else {
-            callback.done(.fail(JobError.onDelete("Can't delete item")))
+            callback.done(.fail(JobError.onAdd("Can't add item")))
         }
     }
 }

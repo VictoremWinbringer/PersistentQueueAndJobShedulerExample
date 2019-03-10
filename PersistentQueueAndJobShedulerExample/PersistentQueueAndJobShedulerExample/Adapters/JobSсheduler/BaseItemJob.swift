@@ -10,6 +10,9 @@ import Foundation
 import SwiftQueue
 
 class BaseItemsJob: Job {
+    
+    static let type = "\(#file)"
+    
     func onRun(callback: JobResult) {
         //do nothing
     }
