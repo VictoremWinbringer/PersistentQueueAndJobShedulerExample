@@ -12,4 +12,8 @@ class TableViewControllerPort {
     var items:[Item]{
       return  ItemsService.get()
     }
+    
+    func add(name:String){
+        ItemsService.add(name: name)
+    }
 }

@@ -11,27 +11,35 @@ import Foundation
 class ItemsService {
     
     static var id:Int = 1
+    static var localItems = Api.Items.list()
     
     static func add(name:String) {
         let item = Item()
         item.id = self.id
+        self.id += 1
         item.name = name
         JobSсheduler.Items.add(item: item)
-        JobSсheduler.Items.syncWithServer()
+        localItems.append(item)
     }
     
     static func update(item:Item){
         JobSсheduler.Items.update(item: item)
-        JobSсheduler.Items.syncWithServer()
+        if let old = localItems.first(where: { i in i.id == item.id}){
+         old.name = item.name
+        }
     }
     
     static func delete(item:Item){
         JobSсheduler.Items.delete(item: item)
-        JobSсheduler.Items.syncWithServer()
+        localItems.removeAll(where: {i in i.id == item.id})
     }
     
     
     static func get() -> [Item] {
-        return Api.Items.list()
+        return localItems
+    }
+    
+    static func syncWithServer(){
+        localItems = Api.Items.list()
     }
 }

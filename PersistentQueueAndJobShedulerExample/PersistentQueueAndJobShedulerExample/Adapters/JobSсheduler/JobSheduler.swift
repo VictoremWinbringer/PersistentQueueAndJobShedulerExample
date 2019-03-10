@@ -38,12 +38,5 @@ class JobSсheduler {
         static func delete(item:Item){
              addJob(type: DeleteItemJob.type, item: item)
         }
-        
-        static func syncWithServer(){
-            JobBuilder(type: SyncItemsJob.type)
-                .internet(atLeast: .cellular)
-                .with(params: [:])
-                .schedule(manager: manager)
-        }
     }
 }

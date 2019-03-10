@@ -18,8 +18,6 @@ class ApiJobCreator: JobCreator {
             return UpdateItemJob(params: params)
         case DeleteItemJob.type:
             return DeleteItemJob(params: params)
-        case SyncItemsJob.type:
-            return SyncItemsJob(params: params)
         default:
             fatalError("No Job !")
         }

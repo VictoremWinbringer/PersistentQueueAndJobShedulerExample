@@ -29,10 +29,5 @@ final class Api {
         static func delete(id:Int){
             self.items.removeAll(where: { i in i.id == id})
         }
-        
-        static func synchronize(){
-           // self.items = itemsFromServer
-            //do nothing. We don't have server
-        }
     }
 }

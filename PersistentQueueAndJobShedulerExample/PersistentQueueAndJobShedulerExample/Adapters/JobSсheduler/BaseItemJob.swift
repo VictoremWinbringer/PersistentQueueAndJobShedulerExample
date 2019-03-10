@@ -11,8 +11,6 @@ import SwiftQueue
 
 class BaseItemsJob: Job {
     
-    static let type = "\(#file)"
-    
     func onRun(callback: JobResult) {
         //do nothing
     }
@@ -34,10 +32,11 @@ class BaseItemsJob: Job {
     
     func createItem() -> Item? {
         let item = Item()
-        if let id = Int(self.params?["id"].debugDescription ?? ""),
-            let name = self.params?["name"].debugDescription {
-            item.id = id
-            item.name = name
+        if let id = self.params?["id"],
+            let name = self.params?["name"],
+         let idInt = Int(String(describing: id)){
+            item.id = idInt
+            item.name = String(describing: name)
             return item
         } else {
             return nil

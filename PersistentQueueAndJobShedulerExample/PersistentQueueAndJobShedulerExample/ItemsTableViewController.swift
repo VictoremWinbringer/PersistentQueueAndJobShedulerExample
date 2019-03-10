@@ -9,18 +9,15 @@
 import UIKit
 
 class ItemsTableViewController: UITableViewController {
-    var items:[Item] = []
     var port:TableViewControllerPort!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-    self.port = TableViewControllerPort()
-        loadItems()
-    }
-    
-    private func loadItems(){
-        self.items = self.port.items
+        self.port = TableViewControllerPort()
+        self.port.add(name: "Test1")
+        self.port.add(name: "Test2")
+        self.port.add(name: "Test3")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,13 +25,13 @@ class ItemsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return self.port.items.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let item = items[indexPath.row]
+        let item = self.port.items[indexPath.row]
         cell.textLabel?.text = item.name
         cell.tag = item.id
         return cell
@@ -51,11 +48,27 @@ class ItemsTableViewController: UITableViewController {
         let delete = UITableViewRowAction.init(style: .normal, title: "Delete", handler: { a, i in
             
         })
-        delete.backgroundColor = UIColor.blue
+        delete.backgroundColor = UIColor.red
         let update = UITableViewRowAction.init(style: .normal, title: "Update", handler: { a, i in
             
         })
-        update.backgroundColor = UIColor.red
+        update.backgroundColor = UIColor.blue
         return [update,delete]
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Add", message: "Inter item name", preferredStyle: UIAlertController.Style.alert)
+        alert.addTextField(configurationHandler: { t in
+            t.placeholder = "name"
+        })
+        
+        let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {a in
+            if let name = alert.textFields?[0].text {
+                self.port.add(name: name)
+                self.tableView.insertRows(at: [IndexPath(row: self.port.items.count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
+            }
+        })
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
     }
 }

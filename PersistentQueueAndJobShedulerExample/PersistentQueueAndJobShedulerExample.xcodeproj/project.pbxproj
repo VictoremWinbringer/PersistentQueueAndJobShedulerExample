@@ -16,7 +16,6 @@
 		AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFB223561BA0054AC4E /* BaseItemJob.swift */; };
 		AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */; };
 		AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFF223579C50054AC4E /* DeleteItemJob.swift */; };
-		AA014E0222357C2E0054AC4E /* SyncItemsJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */; };
 		AA014E0422357EF20054AC4E /* JobSheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0322357EF20054AC4E /* JobSheduler.swift */; };
 		AA014E06223583EC0054AC4E /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E05223583EC0054AC4E /* ItemsService.swift */; };
 		AA014E09223587640054AC4E /* TableViewControllerPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E08223587640054AC4E /* TableViewControllerPort.swift */; };
@@ -39,7 +38,6 @@
 		AA014DFB223561BA0054AC4E /* BaseItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseItemJob.swift; sourceTree = "<group>"; };
 		AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemJob.swift; sourceTree = "<group>"; };
 		AA014DFF223579C50054AC4E /* DeleteItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemJob.swift; sourceTree = "<group>"; };
-		AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncItemsJob.swift; sourceTree = "<group>"; };
 		AA014E0322357EF20054AC4E /* JobSheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSheduler.swift; sourceTree = "<group>"; };
 		AA014E05223583EC0054AC4E /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		AA014E08223587640054AC4E /* TableViewControllerPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerPort.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */,
 				AA014DFB223561BA0054AC4E /* BaseItemJob.swift */,
 				AA014DFF223579C50054AC4E /* DeleteItemJob.swift */,
-				AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */,
 				AA014E0322357EF20054AC4E /* JobSheduler.swift */,
 			);
 			path = "JobSсheduler";
@@ -286,7 +283,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA014E0222357C2E0054AC4E /* SyncItemsJob.swift in Sources */,
 				AA014DFA223561450054AC4E /* JobError.swift in Sources */,
 				AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */,
 				AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */,
