@@ -16,6 +16,7 @@
 		AA014DFC223561BA0054AC4E /* BaseItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFB223561BA0054AC4E /* BaseItemJob.swift */; };
 		AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */; };
 		AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014DFF223579C50054AC4E /* DeleteItemJob.swift */; };
+		AA014E0222357C2E0054AC4E /* SyncItemsJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */; };
 		AAF266F622354941009E0302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F522354941009E0302 /* AppDelegate.swift */; };
 		AAF266F822354941009E0302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F722354941009E0302 /* ViewController.swift */; };
 		AAF266FB22354941009E0302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF266F922354941009E0302 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		AA014DFB223561BA0054AC4E /* BaseItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseItemJob.swift; sourceTree = "<group>"; };
 		AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateItemJob.swift; sourceTree = "<group>"; };
 		AA014DFF223579C50054AC4E /* DeleteItemJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemJob.swift; sourceTree = "<group>"; };
+		AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncItemsJob.swift; sourceTree = "<group>"; };
 		AAF266F222354941009E0302 /* PersistentQueueAndJobShedulerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentQueueAndJobShedulerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF266F522354941009E0302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF266F722354941009E0302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				AA014DFD223563CE0054AC4E /* UpdateItemJob.swift */,
 				AA014DFB223561BA0054AC4E /* BaseItemJob.swift */,
 				AA014DFF223579C50054AC4E /* DeleteItemJob.swift */,
+				AA014E0122357C2E0054AC4E /* SyncItemsJob.swift */,
 			);
 			path = JobSheduler;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA014E0222357C2E0054AC4E /* SyncItemsJob.swift in Sources */,
 				AA014DFA223561450054AC4E /* JobError.swift in Sources */,
 				AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */,
 				AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */,
