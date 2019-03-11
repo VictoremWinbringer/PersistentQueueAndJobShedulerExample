@@ -10,11 +10,17 @@ import UIKit
 
 class ItemsTableViewController: UITableViewController {
     
+    var items:[Item]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        //TODO: Add Realm
-        ItemsService.syncWithServer()
+        updateTable()
+    }
+    
+    func updateTable(){
+        self.items = ItemsService.get()
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -22,13 +28,13 @@ class ItemsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ItemsService.get().count
+        return items.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let item = ItemsService.get()[indexPath.row]
+        let item = items[indexPath.row]
         cell.textLabel?.text = item.name
         return cell
     }
@@ -39,13 +45,14 @@ class ItemsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction.init(style: .normal, title: "Delete", handler: { a, i in
-            ItemsService.delete(item: ItemsService.get()[i.row])
-            self.tableView.deleteRows(at: [i], with: .fade)
+            ItemsService.delete(item: self.items[i.row])
+           // self.tableView.deleteRows(at: [i], with: .fade)
+            self.updateTable()
         })
         delete.backgroundColor = UIColor.red
         
         let update = UITableViewRowAction.init(style: .normal, title: "Update", handler: { a, i in
-            let item = ItemsService.get()[i.row]
+            let item = self.items[i.row]
             let alert = UIAlertController(title: "Update", message: "Inter item name", preferredStyle: UIAlertController.Style.alert)
             alert.addTextField(configurationHandler: { t in
                 t.placeholder = "name"
@@ -56,7 +63,8 @@ class ItemsTableViewController: UITableViewController {
                 if let name = alert.textFields?[0].text {
                     item.name = name
                     ItemsService.update(item: item)
-                    self.tableView.reloadRows(at: [i], with: UITableView.RowAnimation.automatic)
+                  //  self.tableView.reloadRows(at: [i], with: UITableView.RowAnimation.automatic)
+                    self.updateTable()
                 }
             })
             let cansel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -77,7 +85,8 @@ class ItemsTableViewController: UITableViewController {
         let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {[unowned alert] a in
             if let name = alert.textFields?[0].text {
                 ItemsService.add(name: name)
-                self.tableView.insertRows(at: [IndexPath(row: ItemsService.get().count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
+             //   self.tableView.insertRows(at: [IndexPath(row: ItemsService.get().count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
+                self.updateTable()
             }
         })
         let cansel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
