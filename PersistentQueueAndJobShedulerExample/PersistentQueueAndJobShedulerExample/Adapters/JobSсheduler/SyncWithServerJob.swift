@@ -18,5 +18,6 @@ class SyncWithServerJob:BaseItemsJob{
         for item in dif {
             DB.Items.add(item: item)
         }
+        callback.done(.success)
     }
 }
