@@ -30,7 +30,6 @@ class ItemsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let item = ItemsService.get()[indexPath.row]
         cell.textLabel?.text = item.name
-        cell.tag = item.id
         return cell
     }
     

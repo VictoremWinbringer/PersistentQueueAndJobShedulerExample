@@ -9,11 +9,16 @@
 import Foundation
 
 final class Item {
-    var id:Int
+    let id:UUID
     var name:String
     
-    init() {
-        self.id = 0
-        self.name = "unown"
+    init(name:String) {
+        self.id = UUID()
+        self.name = name
+    }
+    
+    init(id:UUID, name:String) {
+        self.id = id
+        self.name = name
     }
 }

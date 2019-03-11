@@ -12,8 +12,7 @@ import SwiftQueue
 class DeleteItemJob: BaseItemsJob {
      static let type = "\(#file)"
     override func onRun(callback: JobResult) {
-        if let item = self.createItem(),
-            item.id > 0 {
+        if let item = self.createItem() {
             Api.Items.delete(id: item.id)
             callback.done(.success)
         } else {

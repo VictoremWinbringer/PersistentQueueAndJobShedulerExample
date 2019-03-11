@@ -10,37 +10,24 @@ import Foundation
 
 class ItemsService {
     
-    static var id:Int = 1
-    static var localItems = Api.Items.list()
-    
     static func add(name:String) {
-        let item = Item()
-        item.id = self.id
-        self.id += 1
-        item.name = name
+        let item = Item(name: name)
         JobSсheduler.Items.add(item: item)
-        localItems.append(item)
+        DB.Items.add(item: item)
     }
     
     static func update(item:Item){
         JobSсheduler.Items.update(item: item)
-        if let old = localItems.first(where: { i in i.id == item.id}){
-         old.name = item.name
-        }
+        DB.Items.update(item: item)
     }
     
     static func delete(item:Item){
         JobSсheduler.Items.delete(item: item)
-        localItems.removeAll(where: {i in i.id == item.id})
+        DB.Items.delete(id: item.id)
     }
-    
     
     static func get() -> [Item] {
-        return localItems
-    }
-    
-    static func syncWithServer(){
-        JobSсheduler.waitUntilAllOperationsAreFinished()
-        localItems = Api.Items.list()
+        JobSсheduler.Items.syncWithServer()
+        return DB.Items.list()
     }
 }

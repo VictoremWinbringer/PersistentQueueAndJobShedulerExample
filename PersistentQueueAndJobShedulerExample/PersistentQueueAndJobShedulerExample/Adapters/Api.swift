@@ -26,7 +26,7 @@ final class Api {
             }
         }
         
-        static func delete(id:Int){
+        static func delete(id:UUID){
             self.items.removeAll(where: { i in i.id == id})
         }
     }
