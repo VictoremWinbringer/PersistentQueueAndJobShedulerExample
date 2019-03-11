@@ -16,6 +16,10 @@ class JobSсheduler {
     .set(persister: UserDefaultsPersister())
     .build()
     
+    static func waitUntilAllOperationsAreFinished(){
+        manager.waitUntilAllOperationsAreFinished()
+    }
+    
     class Items {
       private static func addJob(type:String, item:Item){
             JobBuilder(type: type)

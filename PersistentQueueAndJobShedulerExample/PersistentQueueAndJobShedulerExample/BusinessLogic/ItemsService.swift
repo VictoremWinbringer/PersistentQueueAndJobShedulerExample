@@ -40,6 +40,7 @@ class ItemsService {
     }
     
     static func syncWithServer(){
+        JobSсheduler.waitUntilAllOperationsAreFinished()
         localItems = Api.Items.list()
     }
 }

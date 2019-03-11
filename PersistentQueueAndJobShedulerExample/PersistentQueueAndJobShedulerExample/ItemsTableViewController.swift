@@ -13,8 +13,8 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //TODO: Add Realm
         ItemsService.syncWithServer()
-        ItemsService.add(name: "Item")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
