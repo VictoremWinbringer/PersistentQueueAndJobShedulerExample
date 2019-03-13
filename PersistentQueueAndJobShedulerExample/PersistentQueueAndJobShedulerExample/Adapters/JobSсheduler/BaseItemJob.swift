@@ -32,9 +32,11 @@ class BaseItemsJob: Job {
     
     func createItem() -> Item? {
         if let id = self.params?["id"],
-            let name = self.params?["name"],
-         let uuid = UUID(uuidString: String(describing: id)) {
-            return Item(id: uuid , name: String(describing: name))
+            let name = self.params?["name"] {
+            let item = Item()
+            item.id = String(describing: id)
+            item.name = String(describing: name)
+            return item
         } else {
             return nil
         }

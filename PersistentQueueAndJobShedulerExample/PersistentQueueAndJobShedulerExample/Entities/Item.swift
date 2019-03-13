@@ -7,18 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-final class Item {
-    let id:UUID
-    var name:String
+final class Item:Object {
+    @objc dynamic  var id:String = ""
+    @objc var name:String = ""
     
-    init(name:String) {
-        self.id = UUID()
-        self.name = name
-    }
-    
-    init(id:UUID, name:String) {
-        self.id = id
-        self.name = name
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

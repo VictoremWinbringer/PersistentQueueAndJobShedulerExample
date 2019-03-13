@@ -11,7 +11,9 @@ import Foundation
 class ItemsService {
     
     static func add(name:String) {
-        let item = Item(name: name)
+        let item = Item()
+        item.id = UUID().uuidString
+        item.name = name
         JobSсheduler.Items.add(item: item)
         DB.Items.add(item: item)
     }
@@ -23,11 +25,10 @@ class ItemsService {
     
     static func delete(item:Item){
         JobSсheduler.Items.delete(item: item)
-        DB.Items.delete(id: item.id)
+        DB.Items.delete(item: item)
     }
     
     static func get() -> [Item] {
-        JobSсheduler.Items.syncWithServer()
         return DB.Items.list()
     }
 }

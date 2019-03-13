@@ -13,7 +13,7 @@ class DeleteItemJob: BaseItemsJob {
      static let type = "\(#file)"
     override func onRun(callback: JobResult) {
         if let item = self.createItem() {
-            Api.Items.delete(id: item.id)
+            Api.Items.delete(item: item)
             callback.done(.success)
         } else {
             callback.done(.fail(JobError.onDelete("Can't delete item")))

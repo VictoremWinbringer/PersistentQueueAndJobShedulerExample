@@ -16,10 +16,6 @@ class JobSсheduler {
     .set(persister: UserDefaultsPersister())
     .build()
     
-    static func waitUntilAllOperationsAreFinished(){
-        manager.waitUntilAllOperationsAreFinished()
-    }
-
     class Items {
       private static func addJob(type:String, item:Item){
             JobBuilder(type: type)
@@ -42,14 +38,6 @@ class JobSсheduler {
         
         static func delete(item:Item){
              addJob(type: DeleteItemJob.type, item: item)
-        }
-        
-        static func syncWithServer(){
-            JobBuilder(type: SyncWithServerJob.type)
-                .internet(atLeast: .cellular)
-                .with(params: [:])
-                .persist(required: true)
-                .schedule(manager: manager)
         }
     }
 }

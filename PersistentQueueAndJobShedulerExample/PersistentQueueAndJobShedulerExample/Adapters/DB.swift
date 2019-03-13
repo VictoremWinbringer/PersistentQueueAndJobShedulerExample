@@ -7,27 +7,36 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class DB {
+    private static let realm = try! Realm()
     final class Items {
-        static var items: [Item] = []
-        
         static func list()->[Item] {
-            return self.items
+            var result = [Item]()
+            let items = DB.realm.objects(Item.self)
+            for i in 0..<items.count{
+                result.append(items[i])
+            }
+           return result
         }
         
         static func add(item:Item) {
-            self.items.append(item)
-        }
-        
-        static func update(item:Item){
-            if let old = self.items.first(where: { i in i.id == item.id}) {
-                old.name = item.name
+            try! DB.realm.write {
+                DB.realm.add(item, update: true)
             }
         }
         
-        static func delete(id:UUID){
-            self.items.removeAll(where: { i in i.id == id})
+        static func update(item:Item){
+            try! DB.realm.write {
+                DB.realm.add(item, update: true)
+            }
+        }
+        
+        static func delete(item:Item){
+            try! DB.realm.write {
+                DB.realm.delete(item)
+            }
         }
     }
 }

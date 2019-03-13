@@ -6,5 +6,6 @@ target 'PersistentQueueAndJobShedulerExample' do
   use_frameworks!
 
 pod 'SwiftQueue'
+pod 'RealmSwift'
 
 end

@@ -20,7 +20,6 @@
 		AA014E06223583EC0054AC4E /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E05223583EC0054AC4E /* ItemsService.swift */; };
 		AA014E0B223588C70054AC4E /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0A223588C70054AC4E /* ItemsTableViewController.swift */; };
 		AA014E0D22366B440054AC4E /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0C22366B440054AC4E /* DB.swift */; };
-		AA014E0F22366C580054AC4E /* SyncWithServerJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA014E0E22366C580054AC4E /* SyncWithServerJob.swift */; };
 		AAF266F622354941009E0302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF266F522354941009E0302 /* AppDelegate.swift */; };
 		AAF266FB22354941009E0302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF266F922354941009E0302 /* Main.storyboard */; };
 		AAF266FD22354942009E0302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF266FC22354942009E0302 /* Assets.xcassets */; };
@@ -43,7 +42,6 @@
 		AA014E05223583EC0054AC4E /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		AA014E0A223588C70054AC4E /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		AA014E0C22366B440054AC4E /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
-		AA014E0E22366C580054AC4E /* SyncWithServerJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncWithServerJob.swift; sourceTree = "<group>"; };
 		AAF266F222354941009E0302 /* PersistentQueueAndJobShedulerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistentQueueAndJobShedulerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF266F522354941009E0302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF266FA22354941009E0302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				AA014DFB223561BA0054AC4E /* BaseItemJob.swift */,
 				AA014DFF223579C50054AC4E /* DeleteItemJob.swift */,
 				AA014E0322357EF20054AC4E /* JobSheduler.swift */,
-				AA014E0E22366C580054AC4E /* SyncWithServerJob.swift */,
 			);
 			path = "JobSсheduler";
 			sourceTree = "<group>";
@@ -257,6 +254,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PersistentQueueAndJobShedulerExample/Pods-PersistentQueueAndJobShedulerExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftQueue/SwiftQueue.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -264,6 +263,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftQueue.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA014E0D22366B440054AC4E /* DB.swift in Sources */,
-				AA014E0F22366C580054AC4E /* SyncWithServerJob.swift in Sources */,
 				AA014DFA223561450054AC4E /* JobError.swift in Sources */,
 				AA014E00223579C50054AC4E /* DeleteItemJob.swift in Sources */,
 				AA014DFE223563CE0054AC4E /* UpdateItemJob.swift in Sources */,
